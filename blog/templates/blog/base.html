@@ -9,8 +9,12 @@
     </head>
     <body>
         <div class="page-header">
+            
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'logout' %}" class="top-menu"><span class="glyphicon glyphicon-log-out"></span></a>
+            {% else%}
+                <a href="{% url 'login' %}" class="top-menu" ><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
             <img src="{% static 'img/python_logo.png' %}" >
             <h1><a href="/">Python Estudy Blog</a></h1> 

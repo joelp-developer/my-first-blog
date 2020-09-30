@@ -4,6 +4,9 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
+from django.contrib.auth import logout as do_logout
+
+
 
 # Create your views here.
 
@@ -41,3 +44,10 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def login(request):
+    return render(request,'accounts/login.html')
+
+def logout (request):
+    do_logout(request)
+    return redirect('/')
