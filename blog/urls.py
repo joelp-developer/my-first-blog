@@ -8,4 +8,5 @@ urlpatterns=[
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('accounts/log/', views.login, name='login'),
     path('accounts/logout/',views.logout,name='logout'),
+    path('accounts/reg/',views.registro, name='reg'),
 ]
